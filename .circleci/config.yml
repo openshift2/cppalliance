@@ -24,6 +24,9 @@ jobs:
           echo "PULL REQUEST IS ${CIRCLE_PULL_REQUEST}"
           echo "EDITED PR is ${CIRCLE_PULL_REQUEST##*/}"
           echo "PREVIEW STEP"
+      - store_artifacts:
+          path: .
+          destination: html
   deploy:
     docker:
       - image: circleci/ruby:2.4-node-browsers-legacy
